@@ -1,0 +1,16 @@
+application: <app id>
+version: 1 
+runtime: go
+api_version: go1
+
+handlers:
+- url: /.*
+  script: _go_app
+
+- url: /(.*\.html)
+  static_files: html/\1
+  upload: html/(.*\.html)
+
+env_variables:
+  DIGITALOCEAN_API_KEY: 
+  DIGITALOCEAN_DOMAIN_ID: 
